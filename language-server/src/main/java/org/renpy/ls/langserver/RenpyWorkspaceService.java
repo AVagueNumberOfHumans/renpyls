@@ -1,4 +1,4 @@
-package org.hello.ls.langserver;
+package org.renpy.ls.langserver;
 
 import org.eclipse.lsp4j.DidChangeConfigurationParams;
 import org.eclipse.lsp4j.DidChangeWatchedFilesParams;
