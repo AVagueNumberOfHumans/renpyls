@@ -13,15 +13,15 @@ import org.eclipse.lsp4j.services.WorkspaceService;
 
 import java.util.concurrent.CompletableFuture;
 
-public class HelloLanguageServer implements LanguageServer, LanguageClientAware {
+public class RenpyLanguageServer implements LanguageServer, LanguageClientAware {
     private TextDocumentService textDocumentService;
     private WorkspaceService workspaceService;
     private LanguageClient client;
     private int errorCode = 1;
 
-    public HelloLanguageServer() {
-        this.textDocumentService = new HelloTextDocumentService();
-        this.workspaceService = new HelloWorkspaceService();
+    public RenpyLanguageServer() {
+        this.textDocumentService = new RenpyTextDocumentService();
+        this.workspaceService = new RenpyWorkspaceService();
     }
 
     @Override

@@ -1,4 +1,4 @@
-import org.hello.ls.langserver.HelloLanguageServer;
+import org.renpy.ls.langserver.RenpyLanguageServer;
 import org.eclipse.lsp4j.jsonrpc.Launcher;
 import org.eclipse.lsp4j.launch.LSPLauncher;
 import org.eclipse.lsp4j.services.LanguageClient;
@@ -12,7 +12,7 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 /**
- * Launcher for hello language server.
+ * Launcher for Ren'Py language server.
  */
 public class StdioLauncher {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
@@ -36,15 +36,15 @@ public class StdioLauncher {
      */
     private static void startServer(InputStream in, OutputStream out) throws ExecutionException, InterruptedException {
         // Initialize the HelloLanguageServer
-        HelloLanguageServer helloLanguageServer = new HelloLanguageServer();
+        RenpyLanguageServer renpyLanguageServer = new RenpyLanguageServer();
         // Create JSON RPC launcher for HelloLanguageServer instance.
-        Launcher<LanguageClient> launcher = LSPLauncher.createServerLauncher(helloLanguageServer, in, out);
+        Launcher<LanguageClient> launcher = LSPLauncher.createServerLauncher(renpyLanguageServer, in, out);
 
         // Get the client that request to launch the LS.
         LanguageClient client = launcher.getRemoteProxy();
 
         // Set the client to language server
-        helloLanguageServer.connect(client);
+        renpyLanguageServer.connect(client);
 
         // Start the listener for JsonRPC
         Future<?> startListening = launcher.startListening();

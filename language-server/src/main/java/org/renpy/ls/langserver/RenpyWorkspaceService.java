@@ -9,7 +9,7 @@ import org.eclipse.lsp4j.services.WorkspaceService;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-public class HelloWorkspaceService implements WorkspaceService {
+public class RenpyWorkspaceService implements WorkspaceService {
     @Override
     public CompletableFuture<List<? extends SymbolInformation>> symbol(WorkspaceSymbolParams workspaceSymbolParams) {
         return null;
